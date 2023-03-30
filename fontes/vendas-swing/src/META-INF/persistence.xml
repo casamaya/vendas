@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="1.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
+  <persistence-unit name="vendasPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.hibernate.ejb.HibernatePersistence</provider>
+    <class>vendas.entity.ArquivoOrcamento</class>
+    <class>vendas.entity.ArquivoPedido</class>
+    <class>vendas.entity.ArquivoPreco</class>
+    <class>vendas.entity.AtendimentoPedido</class>
+    <class>vendas.entity.Banco</class>
+    <class>vendas.entity.BancoCliente</class>
+    <class>vendas.entity.Cliente</class>
+    <class>vendas.entity.ClienteContato</class>
+    <class>vendas.entity.ClienteEndereco</class>
+    <class>vendas.entity.ClienteRepres</class>
+    <class>vendas.entity.ComissaoVendedor</class>
+    <class>vendas.entity.Comprador</class>
+    <class>vendas.entity.ContaEmpresa</class>
+    <class>vendas.entity.ContaRepres</class>
+    <class>vendas.entity.ContatoVendedor</class>
+    <class>vendas.entity.Correio</class>
+    <class>vendas.entity.EntradaRepres</class>
+    <class>vendas.entity.FormaPgto</class>
+    <class>vendas.entity.FormaPgtoRepres</class>
+    <class>vendas.entity.FormaVenda</class>
+    <class>vendas.entity.GrupoCliente</class>
+    <class>vendas.entity.GrupoProduto</class>
+    <class>vendas.entity.ItemOrcamento</class>
+    <class>vendas.entity.ItemPedido</class>
+    <class>vendas.entity.ItemPedidoAtend</class>
+    <class>vendas.entity.Mensagem</class>
+    <class>vendas.entity.Meta</class>
+    <class>vendas.entity.Mensagem</class>
+    <class>vendas.entity.Orcamento</class>
+    <class>vendas.entity.Params</class>
+    <class>vendas.entity.Pedido</class>
+    <class>vendas.entity.PgtoCliente</class>
+    <class>vendas.entity.Produto</class>
+    <class>vendas.entity.Referencia</class>
+    <class>vendas.entity.ReferenciaCliente</class>
+    <class>vendas.entity.Repres</class>
+    <class>vendas.entity.RepresContato</class>
+    <class>vendas.entity.RepresProduto</class>
+    <class>vendas.entity.RoteiroVendedor</class>
+    <class>vendas.entity.SegMercado</class>
+    <class>vendas.entity.SituacaoCliente</class>
+    <class>vendas.entity.SubGrupoProduto</class>
+    <class>vendas.entity.Transportador</class>
+    <class>vendas.entity.UnidadeProduto</class>
+    <class>vendas.entity.User</class>
+    <class>vendas.entity.Vendedor</class>
+    <class>vendas.entity.VendedorRepres</class>
+    <class>vendas.entity.VisitaCliente</class>
+    <class>vendas.entity.TipoPgto</class>
+    <class>vendas.entity.TipoPgtoFinanceiro</class>
+    <class>vendas.entity.APagar</class>
+    <class>vendas.entity.AReceber</class>
+    <class>vendas.entity.Conta</class>
+    <class>vendas.entity.ContaFluxo</class>
+    <class>vendas.entity.Movimento</class>
+    <class>vendas.entity.FormaVenda</class>
+    <class>vendas.entity.Agenda</class>
+    <class>vendas.entity.Perfil</class>
+    <class>vendas.entity.Recurso</class>
+    <class>vendas.entity.PerfilRecurso</class>
+    <class>vendas.entity.PedidoEmbarque</class>
+    <class>vendas.entity.Contabil</class>
+    <class>vendas.entity.Colaborador</class>
+    <class>vendas.entity.FuncaoColaborador</class>
+    <class>vendas.entity.GrupoMovimento</class>
+    <properties>
+      <property name="hibernate.connection.username" value="sysdba"/>
+      <property name="hibernate.connection.password" value="masterkey"/>
+      <property name="hibernate.connection.url" value="jdbc:firebirdsql://localhost:3050/C:/Users/jaime/Documents/data/vendas.fdb"/>
+      <!-- property name="hibernate.connection.url" value="jdbc:firebirdsql://cpro43246:3050/e:/VENDAS_APP_PLANOSUL/Vendas/data/vendas.fdb"/ -->
+      <property name="hibernate.dialect" value="org.hibernate.dialect.FirebirdDialect"/>
+      <property name="hibernate.connection.lc_ctype" value="ISO8859_1"/>
+      <property name="hibernate.show_sql" value="false"/>
+      <property name="hibernate.format_sql" value="true"/>
+      <property name="hibernate.connection.driver_class" value="org.firebirdsql.jdbc.FBDriver"/>
+    </properties>
+  </persistence-unit>
+</persistence>

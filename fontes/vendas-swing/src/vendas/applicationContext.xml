@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basename"><value>messages</value></property>
+    </bean>
+
+    <bean id="emailBean" class="vendas.beans.EmailBean"></bean>
+    <bean id="aPagarDao" class="vendas.dao.APagarDao"></bean>
+    <bean id="fluxoDao" class="vendas.dao.FluxoDao"></bean>
+    <bean id="aReceberDao" class="vendas.dao.AReceberDao"></bean>
+    <bean id="planoDao" class="vendas.dao.PlanoDao"></bean>
+    <bean id="bancoDao" class="vendas.dao.BancoDao"></bean>
+    <bean id="colaboradorDao" class="vendas.dao.ColaboradorDao"></bean>
+    <bean id="clienteDao" class="vendas.dao.ClienteDao"></bean>
+    <bean id="contaEmpresaDao" class="vendas.dao.ContaEmpresaDao"></bean>
+    <bean id="correioDao" class="vendas.dao.CorreioDao"></bean>
+    <bean id="baseDao" class="vendas.dao.BaseDao"></bean>
+    <bean id="empresaDao" class="vendas.dao.EmpresaDao"></bean>
+    <bean id="formaPgtoDao" class="vendas.dao.FormaPgtoDao"></bean>
+    <bean id="grupoMovimentoDao" class="vendas.dao.GrupoMovimentoDao"></bean>
+    <bean id="formaVendaDao" class="vendas.dao.FormaVendaDao"></bean>
+    <bean id="tipoPgtoDao" class="vendas.dao.TipoPgtoDao"></bean>
+    <bean id="grupoClienteDao" class="vendas.dao.GrupoClienteDao"></bean>
+    <bean id="tipoPgtoFinanceiroDao" class="vendas.dao.TipoPgtoFinanceiroDao"></bean>
+    <bean id="grupoProdutoDao" class="vendas.dao.GrupoProdutoDao"></bean>
+    <bean id="pedidoDao" class="vendas.dao.PedidoDao"></bean>
+    <bean id="agendaDao" class="vendas.dao.AgendaDao"></bean>
+    <bean id="orcamentoDao" class="vendas.dao.OrcamentoDao"></bean>
+    <bean id="planilhaDao" class="vendas.dao.PlanilhaDao"></bean>
+    <bean id="produtoDao" class="vendas.dao.ProdutoDao"></bean>
+    <bean id="represDao" class="vendas.dao.RepresDao"></bean>
+    <bean id="referenciaDao" class="vendas.dao.ReferenciaDao"></bean>
+    <bean id="roteiroDao" class="vendas.dao.RoteiroDao"></bean>
+    <bean id="segMercadoDao" class="vendas.dao.SegMercadoDao"></bean>
+    <bean id="situacaoClienteDao" class="vendas.dao.SituacaoClienteDao"></bean>
+    <bean id="transportadorDao" class="vendas.dao.TransportadorDao"></bean>
+    <bean id="undProdutoDao" class="vendas.dao.UnidadeProdutoDao"></bean>
+    <bean id="vendedorDao" class="vendas.dao.VendedorDao"></bean>
+    <bean id="userDao" class="vendas.dao.UserDao"></bean>
+    
+    <bean id="aPagarTableModel" class="vendas.swing.model.CompromissoModel">
+        <property name="dao"><ref bean="aPagarDao"/></property>
+    </bean>
+    <bean id="visitasModel" class="vendas.swing.model.VisitasModel">
+        <property name="dao"><ref bean="clienteDao"/></property>
+    </bean>
+    <bean id="fluxoTableModel" class="vendas.swing.model.FluxoTableModel">
+        <property name="dao"><ref bean="fluxoDao"/></property>
+    </bean>
+    <bean id="movimentoGrupoTableModel" class="vendas.swing.model.MovimentoGrupoTableModel">
+        <property name="dao"><ref bean="fluxoDao"/></property>
+    </bean>
+    <bean id="aReceberTableModel" class="vendas.swing.model.AReceberModel">
+        <property name="dao"><ref bean="aReceberDao"/></property>
+    </bean>
+    <bean id="bancoTableModel" class="vendas.swing.model.BancoTableModel">
+        <property name="dao"><ref bean="bancoDao"/></property>
+    </bean>
+    <bean id="colaboradorTableModel" class="vendas.swing.model.ColaboradorTableModel">
+        <property name="dao"><ref bean="colaboradorDao"/></property>
+    </bean>
+    <bean id="clienteTableModel" class="vendas.swing.model.ClienteTableModel">
+        <property name="dao"><ref bean="clienteDao"/></property> 
+    </bean>
+    <bean id="correioTableModel" class="vendas.swing.model.CorreioTableModel">
+        <property name="dao"><ref bean="correioDao"/></property> 
+    </bean>
+    <bean id="formaPgtoModel" class="vendas.swing.model.FormaPgtoModel">
+        <property name="dao"><ref bean="formaPgtoDao"/></property> 
+    </bean>
+    <bean id="grupoMovimentoModel" class="vendas.swing.model.GrupoMovimentoModel">
+        <property name="dao"><ref bean="grupoMovimentoDao"/></property> 
+    </bean>
+    <bean id="tipoPgtoFinanceiroModel" class="vendas.swing.model.TipoPgtoFinanceiroModel">
+        <property name="dao"><ref bean="tipoPgtoFinanceiroDao"/></property>
+    </bean>
+        <bean id="tipoPgtoModel" class="vendas.swing.model.TipoPgtoModel">
+        <property name="dao"><ref bean="tipoPgtoDao"/></property>
+    </bean>
+    <bean id="grupoClienteModel" class="vendas.swing.model.GrupoClienteModel">
+        <property name="dao"><ref bean="grupoClienteDao"/></property> 
+    </bean>
+    <bean id="grupoProdutoModel" class="vendas.swing.model.GrupoProdutoModel">
+        <property name="dao"><ref bean="grupoProdutoDao"/></property> 
+    </bean>
+    <bean id="pedidoTableModel" class="vendas.swing.model.PedidoTableModel">
+        <property name="dao"><ref bean="pedidoDao"/></property> 
+    </bean>
+    <bean id="agendaModel" class="vendas.swing.model.AgendaModel">
+        <property name="dao"><ref bean="agendaDao"/></property> 
+    </bean>
+    <bean id="orcamentoTableModel" class="vendas.swing.model.OrcamentoTableModel">
+        <property name="dao"><ref bean="orcamentoDao"/></property>
+    </bean>
+    <bean id="cobrancaTableModel" class="vendas.swing.model.CobrancaTableModel">
+        <property name="dao"><ref bean="pedidoDao"/></property>
+    </bean>
+    <bean id="saldoClienteTableModel" class="vendas.swing.model.SaldoClienteTableModel">
+        <property name="dao"><ref bean="clienteDao"/></property>
+    </bean>
+    <bean id="clienteRepresModel" class="vendas.swing.model.ClienteRepresModel">
+        <property name="dao"><ref bean="represDao"/></property>
+    </bean>
+    <bean id="clienteFornecedorModel" class="vendas.swing.model.ClienteFornecedorModel">
+        <property name="dao"><ref bean="represDao"/></property>
+    </bean>
+    <bean id="produtoTableModel" class="vendas.swing.model.ProdutoTableModel">
+        <property name="dao"><ref bean="produtoDao"/></property> 
+    </bean>
+    <bean id="planilhaTableModel" class="vendas.swing.model.PlanilhaTableModel">
+        <property name="dao"><ref bean="planilhaDao"/></property>
+    </bean>
+    <bean id="represTableModel" class="vendas.swing.model.RepresTableModel">
+        <property name="dao"><ref bean="represDao"/></property> 
+    </bean>
+    <bean id="roteiroTableModel" class="vendas.swing.model.RoteiroVendedorModel">
+        <property name="dao"><ref bean="roteiroDao"/></property> 
+    </bean>
+    <bean id="referenciaModel" class="vendas.swing.model.ReferenciaModel">
+        <property name="dao"><ref bean="referenciaDao"/></property>
+    </bean>
+    <bean id="segMercadoModel" class="vendas.swing.model.SegMercadoModel">
+        <property name="dao"><ref bean="segMercadoDao"/></property>
+    </bean>
+    <bean id="situacaoClienteModel" class="vendas.swing.model.SituacaoClienteModel">
+        <property name="dao"><ref bean="situacaoClienteDao"/></property> 
+    </bean>
+    <bean id="transportadorModel" class="vendas.swing.model.TransportadorModel">
+        <property name="dao"><ref bean="transportadorDao"/></property> 
+    </bean>
+    <bean id="unidadeProdutoModel" class="vendas.swing.model.UnidadeProdutoModel">
+        <property name="dao"><ref bean="undProdutoDao"/></property> 
+    </bean>
+    <bean id="vendedorTableModel" class="vendas.swing.model.VendedorTableModel">
+        <property name="dao"><ref bean="vendedorDao"/></property> 
+    </bean>
+    <bean id="userTableModel" class="vendas.swing.model.UserTableModel">
+        <property name="dao"><ref bean="userDao"/></property> 
+    </bean>
+    <bean id="clientePgtoPendenteTableModel" class="vendas.swing.model.ClientePgtoPendenteTableModel">
+        <property name="dao"><ref bean="clienteDao"/></property> 
+    </bean>
+    <bean id="aniversarianteInternalFrame" class="vendas.swing.app.auxiliar.AniversarioView" init-method="init">
+        <property name="reportFile" value="aniversariantes"/>
+    </bean>
+    <bean id="visitasView" class="vendas.swing.app.cliente.VisitasView" init-method="init">
+        <property name="reportFile" value="visitas"/>
+    </bean>
+    <bean id="metasFrame" class="vendas.swing.app.main.MetaView">
+    </bean>
+    <bean id="bancoInternalFrame" class="vendas.swing.app.auxiliar.BancoInternalFrame" init-method="init">
+        <constructor-arg><ref bean="bancoTableModel"/></constructor-arg>
+        <property name="reportFile" value="bancos"/>
+    </bean>
+    <bean id="colaboradorInternalFrame" class="vendas.swing.app.auxiliar.ColaboradorInternalFrame" init-method="init">
+        <constructor-arg><ref bean="colaboradorTableModel"/></constructor-arg>
+        <property name="reportFile" value="colaborador"/>
+    </bean>
+    <bean id="correioInternalFrame" class="vendas.swing.app.auxiliar.CorreioInternalFrame" init-method="init">
+        <constructor-arg><ref bean="correioTableModel"/></constructor-arg>
+    </bean>
+    <bean id="contasInternalFrame" class="vendas.swing.app.contas.ContasFrame">
+    </bean>
+    <bean id="recursosInternalFrame" class="vendas.security.RecursosFrame">
+    </bean>
+    <bean id="aPagarInternalFrame" class="vendas.swing.app.contas.APagarFrame" init-method="init">
+        <constructor-arg><ref bean="aPagarTableModel"/></constructor-arg>
+    </bean>
+    <bean id="fluxoInternalFrame" class="vendas.swing.app.contas.FluxoInternalFrame" init-method="init">
+    </bean>
+    <bean id="movimentoGrupoInternalFrame" class="vendas.swing.app.contas.MovimentoGrupoInternalFrame" init-method="init">
+    </bean>
+    <bean id="aReceberInternalFrame" class="vendas.swing.app.contas.AReceberFrame" init-method="init">
+        <constructor-arg><ref bean="aReceberTableModel"/></constructor-arg>
+    </bean>
+    <bean id="cobrancaInternalFrame" class="vendas.swing.app.pedido.CobrancaInternalFrame" init-method="init">
+        <constructor-arg><ref bean="cobrancaTableModel"/></constructor-arg>
+        <property name="reportFile" value="ctrlpgtos1"/>
+    </bean>
+    <bean id="saldoClienteInternalFrame" class="vendas.swing.app.cliente.SaldoClienteInternalFrame" init-method="init">
+        <constructor-arg><ref bean="saldoClienteTableModel"/></constructor-arg>
+    </bean>
+        <bean id="clientePgtoPendenteInternalFrame" class="vendas.swing.app.cliente.ClientePgtoPendenteInternalFrame" init-method="init">
+        <constructor-arg><ref bean="clientePgtoPendenteTableModel"/></constructor-arg>
+    </bean>
+    <bean id="clienteRepresInternalFrame" class="vendas.swing.app.repres.ClienteRepresInternalFrame" init-method="init">
+        <constructor-arg><ref bean="clienteFornecedorModel"/></constructor-arg>
+    </bean>
+    <bean id="clienteInternalFrame" class="vendas.swing.app.cliente.ClienteInternalFrame" init-method="init">
+        <constructor-arg><ref bean="clienteTableModel"/></constructor-arg>
+        <property name="vendedorDao"><ref bean="vendedorDao"/></property> 
+        <property name="situacaoDao"><ref bean="situacaoClienteDao"/></property> 
+    </bean>
+    <bean id="formaPgtoInternalFrame" class="vendas.swing.app.auxiliar.FormaPgtoInternalFrame" init-method="init">
+        <constructor-arg><ref bean="formaPgtoModel"/></constructor-arg>
+        <property name="reportFile" value="formapgto"/>
+    </bean>
+    <bean id="grupoMovimentoInternalFrame" class="vendas.swing.app.contas.GrupoMovimentoInternalFrame" init-method="init">
+        <constructor-arg><ref bean="grupoMovimentoModel"/></constructor-arg>
+        <property name="reportFile" value="grupoMovimento"/>
+    </bean>
+    <bean id="tipoPgtoFinancInternalFrame" class="vendas.swing.app.auxiliar.TipoPgtoFinanceiroInternalFrame" init-method="init">
+        <constructor-arg><ref bean="tipoPgtoFinanceiroModel"/></constructor-arg>
+        <property name="reportFile" value="tipopgto"/>
+    </bean>
+    <bean id="grupoClienteInternalFrame" class="vendas.swing.app.auxiliar.GrupoClienteInternalFrame" init-method="init">
+        <constructor-arg><ref bean="grupoClienteModel"/></constructor-arg>
+        <property name="reportFile" value="grupoclientes"/>
+    </bean>
+    <bean id="grupoClienteFrame" class="vendas.swing.app.cliente.GrupoClienteFrame" init-method="init">
+        <property name="clienteDao"><ref bean="clienteDao"/></property> 
+        <property name="grupoClienteDao"><ref bean="grupoClienteDao"/></property> 
+    </bean>
+    <bean id="grupoProdutoInternalFrame" class="vendas.swing.app.auxiliar.GrupoProdutoInternalFrame" init-method="init">
+        <constructor-arg><ref bean="grupoProdutoModel"/></constructor-arg>
+        <property name="reportFile" value="grupoprodutos"/>
+    </bean>
+    <bean id="pedidoInternalFrame" class="vendas.swing.app.pedido.PedidoInternalFrame" init-method="init">
+        <constructor-arg><ref bean="pedidoTableModel"/></constructor-arg>
+    </bean>
+    <bean id="agendaInternalFrame" class="vendas.swing.app.auxiliar.AgendaInternalFrame" init-method="init">
+        <constructor-arg><ref bean="agendaModel"/></constructor-arg>
+        <property name="reportFile" value="agenda"/>
+    </bean>
+    <bean id="orcamentoInternalFrame" class="vendas.swing.app.pedido.OrcamentoInternalFrame" init-method="init">
+        <constructor-arg><ref bean="orcamentoTableModel"/></constructor-arg>
+    </bean>
+    <bean id="pgtoComissaoFrame" class="vendas.swing.app.pedido.PgtoComissaoFrame" init-method="init">
+        <property name="pedidoDao"><ref bean="pedidoDao"/></property> 
+        <property name="represDao"><ref bean="represDao"/></property> 
+        <property name="vendedorDao"><ref bean="vendedorDao"/></property> 
+    </bean>
+    <bean id="produtoInternalFrame" class="vendas.swing.app.produto.ProdutoInternalFrame" init-method="init">
+        <constructor-arg><ref bean="produtoTableModel"/></constructor-arg>
+        <property name="reportFile" value="produtos"/>
+    </bean>
+    <bean id="planilhaInternalFrame" class="vendas.swing.app.pedido.PlanilhaInternalFrame" init-method="init">
+        <constructor-arg><ref bean="planilhaTableModel"/></constructor-arg>
+        <property name="reportFile" value="planilha"/>
+    </bean>
+    <bean id="imprimirProdutosFrame" class="vendas.swing.app.produto.ImprimirProdutosFrame">
+        <property name="produtoDao"><ref bean="produtoDao"/></property>
+    </bean>
+    <bean id="produtoRepresInternalFrame" class="vendas.swing.app.produto.ProdutoRepresInternalFrame" init-method="init">
+        <property name="reportFile" value="represproduto"/>
+    </bean>
+    <bean id="represInternalFrame" class="vendas.swing.app.repres.RepresInternalFrame" init-method="init">
+        <constructor-arg><ref bean="represTableModel"/></constructor-arg>
+        <property name="reportFile" value="repres"/>
+    </bean>
+    <bean id="roteiroClienteFrame" class="vendas.swing.app.cliente.RoteiroClienteFrame" init-method="init">
+        <property name="clienteDao"><ref bean="clienteDao"/></property> 
+        <property name="roteiroDao"><ref bean="roteiroDao"/></property> 
+        <property name="vendedorDao"><ref bean="vendedorDao"/></property> 
+    </bean>
+    <bean id="referenciaInternalFrame" class="vendas.swing.app.auxiliar.ReferenciaInternalFrame" init-method="init">
+        <constructor-arg><ref bean="referenciaModel"/></constructor-arg>
+        <property name="reportFile" value="referencias"/>
+    </bean>
+    <bean id="segMercadoInternalFrame" class="vendas.swing.app.auxiliar.SegMercadoInternalFrame" init-method="init">
+        <constructor-arg><ref bean="segMercadoModel"/></constructor-arg>
+        <property name="reportFile" value="segmercado"/>
+    </bean>
+    <bean id="situacaoClienteInternalFrame" class="vendas.swing.app.auxiliar.SituacaoClienteInternalFrame" init-method="init">
+        <constructor-arg><ref bean="situacaoClienteModel"/></constructor-arg>
+        <property name="reportFile" value="situacaoclientes"/>
+    </bean>
+    <bean id="transportadorInternalFrame" class="vendas.swing.app.auxiliar.TransportadorInternalFrame" init-method="init">
+        <constructor-arg><ref bean="transportadorModel"/></constructor-arg>
+        <property name="reportFile" value="transportadores"/>
+    </bean>
+    <bean id="undProdutoInternalFrame" class="vendas.swing.app.auxiliar.UndProdutoInternalFrame" init-method="init">
+        <constructor-arg><ref bean="unidadeProdutoModel"/></constructor-arg>
+        <property name="reportFile" value="undproduto"/>
+    </bean>
+    <bean id="vendedorInternalFrame" class="vendas.swing.app.auxiliar.VendedorInternalFrame" init-method="init">
+        <constructor-arg><ref bean="vendedorTableModel"/></constructor-arg>
+        <property name="vendedorDao"><ref bean="vendedorDao"/></property> 
+        <property name="reportFile" value="vendedores"/>
+    </bean>
+    <bean id="userInternalFrame" class="vendas.security.UserInternalFrame" init-method="init">
+        <constructor-arg><ref bean="userTableModel"/></constructor-arg>
+        <property name="userDao"><ref bean="userDao"/></property> 
+        <property name="reportFile" value="users"/>
+    </bean>
+    
+</beans>
