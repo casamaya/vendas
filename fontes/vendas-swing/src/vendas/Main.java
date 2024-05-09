@@ -459,7 +459,7 @@ public class Main extends SingleFrameApplication {
             String title = frame.getTitle();
             
             if (app.getUser().isVendedor() || app.getUser().isPromotor()) {
-                if (title.equals("Produtos por fornecedor") || title.equals("Clientes") || title.equals("Produtos") || title.equals("Produtos por fornecedor") || title.equals("Visitas a clientes") || title.equals("Agenda") || title.equals("Tipos de pagamento") || title.equals("Contas a receber") || title.equals("Contas a pagar") || title.equals("Plano de contas") || title.equals("Controle de pedidos") || frame instanceof ClienteViewFrame || title.equals("Or�amentos") || title.equals("Movimento financeiro")) {
+                if (title.equals("Produtos por fornecedor") || title.equals("Clientes") || title.equals("Produtos") || title.equals("Produtos por fornecedor") || title.equals("Visitas a clientes") || title.equals("Agenda") || title.equals("Tipos de pagamento") || title.equals("Contas a receber") || title.equals("Contas a pagar") || title.equals("Plano de contas") || title.equals("Controle de pedidos") || frame instanceof ClienteViewFrame || title.equals("Orçamentos") || title.equals("Movimento financeiro")) {
                     ((ViewFrame) frame).insert();
                 }
                 if (app.getUser().isPromotor()) {
@@ -656,20 +656,23 @@ public class Main extends SingleFrameApplication {
 
     @Action
     public void pedidoPgtoComissao() {
-        if (app.getUser().isAdmin())
+        if (app.getUser().isAdmin()) {
             newInternalFrame("pgtoComissaoFrame");
+        }
     }
 
     @Action
     public void mapaComissao() {
-        if (app.getUser().isAdmin())
+        if (app.getUser().isAdmin()) {
             newInternalFrame(new MapaComissaoView());
+        }
     }
 
     @Action
     public void pedidoRecibo() {
-        if (app.getUser().isAdmin())
+        if (app.getUser().isAdmin()) {
             newInternalFrame(new ReciboComissaoView());
+        }
     }
 
     @Action
@@ -707,14 +710,16 @@ public class Main extends SingleFrameApplication {
     }
     @Action
     public void usuarios() {
-        if (app.getUser().isAdmin())
+        if (app.getUser().isAdmin()) {
             newInternalFrame("userInternalFrame");
+        }
     }
 
     @Action
     public void permissoes() {
-        if (app.getUser().isAdmin())
+        if (app.getUser().isAdmin()) {
             newInternalFrame("recursosInternalFrame");
+        }
     }
     
     @Action
@@ -797,8 +802,9 @@ public class Main extends SingleFrameApplication {
 
     @Action
     public void contabil() {
-        if (app.getUser().isAdmin() || app.getUser().isEscritorio())
+        if (app.getUser().isAdmin() || app.getUser().isEscritorio()) {
             newInternalFrame(new ContabilFrame());
+        }
     }
 
     @Action
@@ -1217,14 +1223,14 @@ public class Main extends SingleFrameApplication {
             iniciarComissao();
         } catch (Exception e) {
             logger.error(e.getMessage(), e);
-            Messages.errorMessage("Falha ao iniciar comiss�o");
+            Messages.errorMessage("Falha ao iniciar comissão");
         }
 
         try {
             frames.add(iniciarAniversarios());
         } catch (Exception e) {
             logger.error(e.getMessage(), e);
-            Messages.errorMessage("Falha ao iniciar anivers�rios");
+            Messages.errorMessage("Falha ao iniciar aniversários");
         }
         
         /* try {
@@ -1261,14 +1267,14 @@ public class Main extends SingleFrameApplication {
             frames.add(iniciarCobranca());
         } catch (Exception e) {
             logger.error(e.getMessage(), e);
-            Messages.errorMessage("Falha ao iniciar cobran�a");
+            Messages.errorMessage("Falha ao iniciar cobrança");
         }
 
         try {
             frames.add(iniciarSaldoCliente());
         } catch (Exception e) {
             logger.error(e.getMessage(), e);
-            Messages.errorMessage("Falha ao iniciar saldo de cobran�a");
+            Messages.errorMessage("Falha ao iniciar saldo de cobrança");
         }
         
         try {
@@ -1302,10 +1308,13 @@ public class Main extends SingleFrameApplication {
         SimpleDateFormat formatter = new SimpleDateFormat("yyyyMM");
         DateFormatter df = new DateFormatter(formatter);
         Date d = DateUtils.getDate();
-            if (d == null)
-                d = new Date();
+        if (d == null) {
+            d = new Date();
+        }
+		
         String anoMes = formatter.format(d);
         BigDecimal meta = dao.getMeta(anoMes);
+		
         if (meta != null) {
             comissaoMeta.setText(NumberUtils.format(meta, 10, 2) + "(M)");
             comissaoMeta.invalidate();
@@ -1416,8 +1425,9 @@ public class Main extends SingleFrameApplication {
         pedidoFilter.setVendedor(null);
         try {
             Date d = DateUtils.getDate();
-            if (d == null)
+            if (d == null) {
                 d = new Date();
+            }
             String s = DateUtils.format(d);
             pedidoFilter.setDtEmissaoIni(DateUtils.getFirstDate(DateUtils.parse(s)));
             pedidoFilter.setDtEmissaoEnd(DateUtils.parse(DateUtils.format(d)));
@@ -1599,7 +1609,7 @@ public class Main extends SingleFrameApplication {
             cobrancaFilter.setVendedor(vendedor);
         }
 
-        cobrancaFilter.setTitle("Saldo de cobran�as");
+        cobrancaFilter.setTitle("Saldo de cobranças");
         frame.executeFilter(cobrancaFilter);
         return frame;
     }

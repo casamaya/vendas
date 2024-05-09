@@ -70,8 +70,8 @@
     <properties>
       <property name="hibernate.connection.username" value="sysdba"/>
       <property name="hibernate.connection.password" value="masterkey"/>
-      <property name="hibernate.connection.url" value="jdbc:firebirdsql://localhost:3050/C:/Users/jaime/Documents/data/vendas.fdb"/>
-      <!-- property name="hibernate.connection.url" value="jdbc:firebirdsql://cpro43246:3050/e:/VENDAS_APP_PLANOSUL/Vendas/data/vendas.fdb"/ -->
+      <!-- property name="hibernate.connection.url" value="jdbc:firebirdsql://localhost:3050/C:/Users/jaime/OneDrive/Documents/data/vendas.fdb"/ -->
+      <property name="hibernate.connection.url" value="jdbc:firebirdsql://cpro43246:3050/e:/vendas/data/vendas.fdb"/>
       <property name="hibernate.dialect" value="org.hibernate.dialect.FirebirdDialect"/>
       <property name="hibernate.connection.lc_ctype" value="ISO8859_1"/>
       <property name="hibernate.show_sql" value="false"/>

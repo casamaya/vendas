@@ -802,6 +802,7 @@ public class PedidoDao extends BaseDao {
         sb.append(" ) z").append("\n");
         sb.append(" where z.idrepres = r.idrepres").append("\n");
         sb.append(" and z.idvendedor = v.IDVENDEDOR").append("\n");
+        sb.append(" and v.ativo = '1'");
         sb.append(" group by r.razao, z.idcliente, v.nome").append("\n");
         
         EntityManager em = ManagerFactory.getEntityManager();
