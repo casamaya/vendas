@@ -38,7 +38,11 @@
     <bean id="undProdutoDao" class="vendas.dao.UnidadeProdutoDao"></bean>
     <bean id="vendedorDao" class="vendas.dao.VendedorDao"></bean>
     <bean id="userDao" class="vendas.dao.UserDao"></bean>
+    <bean id="pendenciaDao" class="vendas.dao.PendenciaDao"></bean>
     
+    <bean id="pendenciaTableModel" class="vendas.swing.model.PendenciaModel">
+        <property name="dao"><ref bean="pendenciaDao"/></property>
+    </bean>
     <bean id="aPagarTableModel" class="vendas.swing.model.CompromissoModel">
         <property name="dao"><ref bean="aPagarDao"/></property>
     </bean>
@@ -166,6 +170,9 @@
     </bean>
     <bean id="aPagarInternalFrame" class="vendas.swing.app.contas.APagarFrame" init-method="init">
         <constructor-arg><ref bean="aPagarTableModel"/></constructor-arg>
+    </bean>
+    <bean id="pendenciaInternalFrame" class="vendas.swing.app.pedido.PendenciaInternalFrame" init-method="init">
+        <constructor-arg><ref bean="pendenciaTableModel"/></constructor-arg>
     </bean>
     <bean id="fluxoInternalFrame" class="vendas.swing.app.contas.FluxoInternalFrame" init-method="init">
     </bean>

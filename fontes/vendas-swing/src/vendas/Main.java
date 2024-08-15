@@ -107,6 +107,7 @@ import vendas.swing.app.pedido.NotasPedidoView;
 import vendas.swing.app.pedido.PedidoDataSource;
 import vendas.swing.app.pedido.PedidoInternalFrame;
 import vendas.swing.app.pedido.PedidoUtil;
+import vendas.swing.app.pedido.PendenciaInternalFrame;
 import vendas.swing.app.pedido.PosicaoAtendView;
 import vendas.swing.app.pedido.ProdutosCompradosView;
 import vendas.swing.app.pedido.ProdutosVendidosView;
@@ -284,7 +285,9 @@ public class Main extends SingleFrameApplication {
             {"pedidoAtendimento", "POSICAO_ATENDIMENTO"},
             {"totaisOp", "TOTAIS_OP"},
             {"totaisDesconto", "TOTAIS_DESCONTO"},
-            {"notasPedido", "NOTAS_DE_ATENDIMENTO"}
+            {"notasPedido", "NOTAS_DE_ATENDIMENTO"},
+            {"---", null},
+            {"pendencias", "PENDENCIAS"}
         };
         String[][] auxiliarMenuActionNames = {
             {"bancos", "BANCOS"},
@@ -899,6 +902,11 @@ public class Main extends SingleFrameApplication {
     public void clientesGrupoProdutos() {
         newInternalFrame(new ClientesGrupoView());
     }
+    
+    @Action
+    public void pendencias() {
+        newInternalFrame("pendenciaInternalFrame");
+    }
 
     @Action
     public void cascata() {
@@ -1223,14 +1231,14 @@ public class Main extends SingleFrameApplication {
             iniciarComissao();
         } catch (Exception e) {
             logger.error(e.getMessage(), e);
-            Messages.errorMessage("Falha ao iniciar comiss√£o");
+            Messages.errorMessage("Falha ao iniciar comiss„o");
         }
 
         try {
             frames.add(iniciarAniversarios());
         } catch (Exception e) {
             logger.error(e.getMessage(), e);
-            Messages.errorMessage("Falha ao iniciar anivers√°rios");
+            Messages.errorMessage("Falha ao iniciar anivers·rios");
         }
         
         /* try {
@@ -1245,6 +1253,13 @@ public class Main extends SingleFrameApplication {
         } catch (Exception e) {
             logger.error(e.getMessage(), e);
             Messages.errorMessage("Falha ao iniciar metas");
+        }
+        
+        try {
+            frames.add(iniciarPendecia());
+        } catch (Exception e) {
+            logger.error(e.getMessage(), e);
+            Messages.errorMessage("Falha ao iniciar lista de pendÍncia");
         }
 /*
         try {
@@ -1325,6 +1340,13 @@ public class Main extends SingleFrameApplication {
     
     private JInternalFrame iniciarClientesPgtoPendente() {
         ClientePgtoPendenteInternalFrame frame = (ClientePgtoPendenteInternalFrame) app.lookupService("clientePgtoPendenteInternalFrame");
+        newInternalFrame(frame);
+        frame.refresh();
+        return frame;
+    }
+    
+    private JInternalFrame iniciarPendecia() {
+        PendenciaInternalFrame frame = (PendenciaInternalFrame) app.lookupService("pendenciaInternalFrame");
         newInternalFrame(frame);
         frame.refresh();
         return frame;

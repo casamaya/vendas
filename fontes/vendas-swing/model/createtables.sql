@@ -3,6 +3,21 @@ connect /Users/sam/Databases/vendas.fdb user "sysdba" password "masterkey";
 ./gbak -backup /Users/sam/Databases/contas.fdb /Users/sam/Databases/contas.bkp -y /Users/sam/Databases/contas.log -v -user sysdba -pas masterkey
 ./gbak -replace /Users/sam/Databases/contas.bkp /Users/sam/Databases/contas.fdb -v -user sysdba -pas masterkey
 
+create table TBPENDENCIA (
+    IDPENDENCIA INTEGER NOT NULL,
+    DTINCLUSAO TIMESTAMP NOT NULL,
+    DTALTERACAO TIMESTAMP,
+    USERNAME VARCHAR(20) NOT NULL,
+    DSPENDENCIA varchar(1024) not null,
+    inresolvido char(1) default 'N' not null,
+    primary key (idpendencia)
+)
+
+CREATE SEQUENCE TBPENDENCIA_IDPENDENCIA_SEQ;
+
+CREATE INDEX IDXPENDENCIA1 ON TBPENDENCIA(DTINCLUSAO);
+CREATE INDEX IDXPENDENCIA2 ON TBPENDENCIA(USERNAME);
+
 CREATE TABLE TBCLIENTEGRUPO (
    IDGRPCLIENTE INTEGER NOT NULL,
    IDCLIENTE INTEGER NOT NULL,
