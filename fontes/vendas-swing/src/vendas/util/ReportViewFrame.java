@@ -312,17 +312,19 @@ public class ReportViewFrame extends ViewFrame {
 
             if (incluirAnexo) {
                 List<ArquivoPedido> lista = anexos; //cobranca.getArquivos();
-                for (ArquivoPedido arq : lista) {
-                    try {
-                        DataSource src = new ByteArrayDataSource(arq.getBlob().getBinaryStream(), "application/pdf");
-                        messageBodyPart = new MimeBodyPart();
-                        messageBodyPart.setDataHandler(new DataHandler(src));
-                        messageBodyPart.setFileName(arq.getDescricao());
-                        multipart.addBodyPart(messageBodyPart);
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                        Messages.errorMessage("Falha ao incluir anexo");
-                        break;
+                if (lista != null) {
+                    for (ArquivoPedido arq : lista) {
+                        try {
+                            DataSource src = new ByteArrayDataSource(arq.getBlob().getBinaryStream(), "application/pdf");
+                            messageBodyPart = new MimeBodyPart();
+                            messageBodyPart.setDataHandler(new DataHandler(src));
+                            messageBodyPart.setFileName(arq.getDescricao());
+                            multipart.addBodyPart(messageBodyPart);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                            Messages.errorMessage("Falha ao incluir anexo");
+                            break;
+                        }
                     }
                 }
             }
