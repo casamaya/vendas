@@ -17,7 +17,6 @@ import javax.swing.DefaultCellEditor;
 import javax.swing.JFormattedTextField;
 import javax.swing.JTable;
 import javax.swing.SwingConstants;
-import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.TableColumn;
 import ritual.swing.DateCellRenderer;
 import ritual.swing.FractionCellRenderer;

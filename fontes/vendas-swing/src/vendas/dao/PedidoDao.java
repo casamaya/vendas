@@ -2699,6 +2699,37 @@ public class PedidoDao extends BaseDao {
             clidao.atualizaAtrasoCliente(pgto.getAtendimentoPedido().getPedido().getCliente().getIdCliente());
         }
     }
+    
+        public void atualizarDtVencimento(List<PgtoCliente> lista, Date dtVencimento) throws DAOException {
+        getLogger().info("atualizarDtVencimento ini");
+        if (dtVencimento == null) {
+            return;
+        }
+        
+        EntityManager em = getEntityManager();
+        StringBuilder sb = new StringBuilder();
+        sb.append("update PgtoCliente p set p.dtVencimento = :dt where p.idPgtoCliente = :id");
+        Query q = em.createQuery(sb.toString());
+        q.setParameter("dt", dtVencimento);
+        EntityTransaction t = em.getTransaction();
+        
+        try {
+            t.begin();
+        
+            for (PgtoCliente pgto : lista) {
+                q.setParameter("id", pgto.getIdPgtoCliente());
+                q.executeUpdate();
+            }
+            
+            t.commit();
+        } catch (Exception e) {
+            t.rollback();
+            e.printStackTrace();
+        } finally {
+            em.close();
+        }
+       
+    }
 
     public List<Meta> findMetas() {
         getLogger().info("findMetas ini");

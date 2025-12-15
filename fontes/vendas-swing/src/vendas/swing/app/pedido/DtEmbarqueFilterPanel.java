@@ -5,7 +5,6 @@
  */
 package vendas.swing.app.pedido;
 
-import ritual.util.DateUtils;
 import vendas.beans.MovimentoFilter;
 import vendas.swing.core.EditPanel;
 

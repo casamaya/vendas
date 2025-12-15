@@ -116,13 +116,14 @@ public class PedidoInternalFrame extends TableViewFrame {
                 
                 edtDlg.setEditPanel(edtPanel);
                 MovimentoFilter dtEmbarque = new MovimentoFilter();
+                PedidoDao dao = (PedidoDao) TApplication.getInstance().lookupService("pedidoDao");
                 
                 while (edtDlg.edit(dtEmbarque)) {
                     if (dtEmbarque.getDtInicio().compareTo(DateUtils.getCurrentDate()) < 0) {
                         Messages.errorMessage("Data de embarque deve ser maior ou igual à data corrente.");
                         continue;
                     }
-                    PedidoDao dao = (PedidoDao) TApplication.getInstance().lookupService("pedidoDao");
+                    
                     for (int i : rows) {
                         Pedido pedido = (Pedido)getTableModel().getObject(i);
                         if (pedido.getSituacao().equals("N")) {

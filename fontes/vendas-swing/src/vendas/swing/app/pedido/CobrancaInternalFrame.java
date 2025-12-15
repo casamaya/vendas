@@ -18,6 +18,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import javax.swing.JMenuItem;
@@ -35,6 +36,7 @@ import vendas.beans.CobrancaFilter;
 import vendas.dao.PedidoDao;
 import vendas.entity.Pedido;
 import vendas.entity.PgtoCliente;
+import vendas.swing.core.DateSelectPanel;
 import vendas.swing.model.CobrancaTableModel;
 import vendas.util.Constants;
 import vendas.util.EditDialog;
@@ -189,7 +191,7 @@ public class CobrancaInternalFrame extends TableViewFrame {
                             refresh();
                         } catch (Exception e) {
                             getLogger().error(getBundle().getString("exportError"), e);
-                            Messages.errorMessage("Falha da atualiza\u00E7\u00E3o");
+                            Messages.errorMessage("Falha na atualiza\u00E7\u00E3o");
                         }
                     } else {
                         Messages.infoMessage("Não foi possível realizar a baixa automática de " + contador + " lançamento(s).");
@@ -199,6 +201,47 @@ public class CobrancaInternalFrame extends TableViewFrame {
             }
         });
         popupMenu.add(baixarMenuItem);
+        
+        JMenuItem dtVencimentoMenuItem = new JMenuItem();
+        dtVencimentoMenuItem.setText("Alterar data de vencimento");
+        dtVencimentoMenuItem.addActionListener(new java.awt.event.ActionListener() {
+
+            @Override
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                int rows[] = getTable().getSelectedRows();
+                
+                if (rows.length <= 0) {
+                    Messages.warningMessage(getBundle().getString("selectMany"));
+                    return;
+                }
+                
+                List<PgtoCliente> lista = new ArrayList();
+                PgtoCliente pgto;
+                
+                for (int i : rows) {
+                    pgto = (PgtoCliente) getTableModel().getObject(i);
+                    lista.add(pgto);
+                }
+                
+                EditDialog edtDlg = new EditDialog("Alterar data de vencimento");
+                DateSelectPanel panel = new DateSelectPanel();
+                edtDlg.setEditPanel(panel);
+                Date dtVencimento = new Date();
+                PedidoDao dao = (PedidoDao) TApplication.getInstance().lookupService("pedidoDao");
+                
+                try {
+                    while (edtDlg.edit(dtVencimento)) {
+                        dao.atualizarDtVencimento(lista, dtVencimento);
+                        refresh();
+                        break;
+                    }
+                } catch (Exception e) {
+                    getLogger().error("Erro", e);
+                    Messages.errorMessage("Falha na atualiza\u00E7\u00E3o");
+                }
+            }
+        });
+        popupMenu.add(dtVencimentoMenuItem);
 
         JMenuItem observacaoMenuItem = new JMenuItem();
         observacaoMenuItem.setText(getBundle().getString("obs"));
