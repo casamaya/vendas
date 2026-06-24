@@ -56,11 +56,7 @@ public class IntervaloFilterPanel extends EditPanel {
         java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("vendas/resources/Vendas"); // NOI18N
         jLabel5.setText(bundle.getString("dtPgto")); // NOI18N
 
-        dtInicioField.setDateFormatString("dd/MM/yyyy"); // NOI18N
-
         jLabel6.setText(bundle.getString("dtPgto")); // NOI18N
-
-        dtFimField.setDateFormatString("dd/MM/yyyy"); // NOI18N
 
         jLabel1.setText("a");
 

@@ -152,6 +152,13 @@ public class DateUtils {
         return calendar.getTime();
     }
 
+    public static Date addDaysToDate(Date dt, int n) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(dt);
+        calendar.add(Calendar.DAY_OF_MONTH, n);
+        return calendar.getTime();
+    }
+    
     public static Date addMonthToDate(Date dt, int n) {
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(dt);

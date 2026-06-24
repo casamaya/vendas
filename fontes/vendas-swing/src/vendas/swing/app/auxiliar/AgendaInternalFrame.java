@@ -92,7 +92,7 @@ public class AgendaInternalFrame extends TableViewFrame {
                     Messages.warningMessage(getBundle().getString("selectMany"));
                     return;
                 }
-                Agenda value = editMultipleRow();
+                DataDiaAgendaModel value = editMultipleRow();
                 Agenda agenda;
                 Agenda nova;
                 if (value != null) {
@@ -101,15 +101,13 @@ public class AgendaInternalFrame extends TableViewFrame {
                         agenda = (Agenda)getTableModel().getObject(i);
                         nova = new Agenda();
                         nova.setUsuario(app.getUser());
-                        if (value.getDtevento() != null)
-                            nova.setDtevento(value.getDtevento());
-                        else
-                            nova.setDtevento(agenda.getDtevento());
+                        if (value.getTipo().equals("D")) {
+                            nova.setDtevento(value.getDtEvento());
+                        } else {
+                            nova.setDtevento(DateUtils.addDaysToDate(agenda.getDtevento(), value.getQtDia()));
+                        }
                         
-                        if (value.getDescricao().trim() != null && value.getDescricao().trim().length() > 0)
-                            nova.setDescricao(value.getDescricao());
-                        else
-                            nova.setDescricao(agenda.getDescricao());
+                        nova.setDescricao(agenda.getDescricao());
                         
                         getTableModel().insertRecord(nova);
                     }
@@ -194,16 +192,16 @@ public class AgendaInternalFrame extends TableViewFrame {
         }
     }
 
-    private Agenda editMultipleRow() {
+    private DataDiaAgendaModel editMultipleRow() {
         ServiceTableModel vtm = getTableModel();
-        AgendaEditPanel editPanel = new AgendaEditPanel();
+        AgendaMovEditPanel editPanel = new AgendaMovEditPanel();
         EditDialog edtDlg = new EditDialog("Alterar evento");
 
         edtDlg.setEditPanel(editPanel, !app.isGrant("ALTERAR_AGENDA"));
 
-        Agenda agenda = new Agenda();
+        DataDiaAgendaModel agenda = new DataDiaAgendaModel();
         while (edtDlg.edit(agenda)) {
-            if (agenda.getDtevento() != null || agenda.getDescricao() != null) {
+            if (agenda.getDtEvento() != null || agenda.getQtDia() != null) {
                 return agenda;
             }
         }

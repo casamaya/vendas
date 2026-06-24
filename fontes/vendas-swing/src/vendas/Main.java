@@ -1255,12 +1255,13 @@ public class Main extends SingleFrameApplication {
             Messages.errorMessage("Falha ao iniciar metas");
         }
         
-        try {
+        /* try {
             frames.add(iniciarPendecia());
         } catch (Exception e) {
             logger.error(e.getMessage(), e);
             Messages.errorMessage("Falha ao iniciar lista de pendência");
-        }
+        }*/
+        
 /*
         try {
             frames.add(iniciarClientesPgtoPendente());

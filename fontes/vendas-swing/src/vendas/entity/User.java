@@ -6,6 +6,7 @@
 package vendas.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -223,7 +224,9 @@ public class User implements Serializable {
     
     public void addPerfil(Perfil value) {
         if (value == null) return;
-        
+        if (perfis == null) {
+            perfis = new ArrayList<>();
+        }
         if (!perfis.contains(value)) {
             perfis.add(value);
         }

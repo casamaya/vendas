@@ -70,9 +70,6 @@
       </Properties>
     </Component>
     <Component class="com.toedter.calendar.JDateChooser" name="dtInicioField">
-      <Properties>
-        <Property name="dateFormatString" type="java.lang.String" value="dd/MM/yyyy" noResource="true"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">
       <Properties>
@@ -82,9 +79,6 @@
       </Properties>
     </Component>
     <Component class="com.toedter.calendar.JDateChooser" name="dtFimField">
-      <Properties>
-        <Property name="dateFormatString" type="java.lang.String" value="dd/MM/yyyy" noResource="true"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
