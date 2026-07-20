@@ -13,6 +13,8 @@ import java.sql.Blob;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Basic;
@@ -472,15 +474,16 @@ public class Cliente implements Serializable {
     public Boolean isBloqueado() {
         return "S".equals(this.bloqueado);
     }
-        
+    
     public VisitaCliente getUltimaVisita() {
         if (getVisitas() != null && !getVisitas().isEmpty()) {
-            Object[] a = getVisitas().toArray();
-            return (VisitaCliente) a[a.length - 1];
+            List<VisitaCliente> lista = new ArrayList();
+            lista.addAll(getVisitas());
+            Collections.sort(lista, new VisitaComparator());
+            return lista.get(0);
         } else {
             return null;
         }
-        
     }
 
     private byte[] toByteArray(Blob fromImageBlob) {
@@ -877,5 +880,16 @@ public class Cliente implements Serializable {
             i++;
         }
         return sb.toString();
+    }
+}
+
+class VisitaComparator implements Comparator {
+
+    @Override
+    public int compare(Object obj1, Object obj2) {
+        VisitaCliente grupo1 = (VisitaCliente) obj1;
+        VisitaCliente grupo2 = (VisitaCliente) obj2;
+
+        return grupo2.getDtVisita().compareTo(grupo1.getDtVisita());
     }
 }

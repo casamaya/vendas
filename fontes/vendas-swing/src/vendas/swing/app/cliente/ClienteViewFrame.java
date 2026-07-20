@@ -16,6 +16,7 @@ import java.math.BigDecimal;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
@@ -127,7 +128,7 @@ public class ClienteViewFrame extends ViewFrame {
         segmentoTable.setModel(new ClienteSegmentoModel((List) cliente.getSegmentos()));
         vendedoresTable.setModel(new VendedorClienteModel((List) cliente.getVendedores()));
         compradoresTable.setModel(new ClienteCompradorModel((List) cliente.getCompradores()));
-        
+        visitaSort();
         Collection<VisitaCliente> visitas = cliente.getVisitas();
         
         visitasTable.setModel(new ClienteVisitaModel((List) visitas));
@@ -155,15 +156,21 @@ public class ClienteViewFrame extends ViewFrame {
         vendedoresTable.getColumnModel().getColumn(0).setPreferredWidth(250);
         represTable.getColumnModel().getColumn(0).setPreferredWidth(250);
         rotatividadeTable.getColumnModel().getColumn(1).setPreferredWidth(150);
+        
+        makeVisitasTable();
+        
+    }
+    
+    private void makeVisitasTable() {
         visitasTable.getColumnModel().getColumn(ClienteVisitaModel.DT_VISITA).setPreferredWidth(90);
         visitasTable.getColumnModel().getColumn(ClienteVisitaModel.PEDIDO).setPreferredWidth(90);
         visitasTable.getColumnModel().getColumn(ClienteVisitaModel.VENDEDOR).setPreferredWidth(200);
         visitasTable.getColumnModel().getColumn(ClienteVisitaModel.OBS).setPreferredWidth(250);
+        visitasTable.setDefaultRenderer(Date.class, new DateCellRenderer());
     }
 
     private void setRenderer() {
-        segmentoTable.setDefaultRenderer(BigDecimal.class, new FractionCellRenderer(8, 2, SwingConstants.RIGHT));
-        visitasTable.setDefaultRenderer(Date.class, new DateCellRenderer());
+        segmentoTable.setDefaultRenderer(BigDecimal.class, new FractionCellRenderer(8, 2, SwingConstants.RIGHT));       
         pedidosTable.setDefaultRenderer(Date.class, new DateCellRenderer());
         pedidosTable.setDefaultRenderer(BigDecimal.class, new FractionCellRenderer(8, 2, SwingConstants.RIGHT));
         represTable.setDefaultRenderer(BigDecimal.class, new FractionCellRenderer(8, 2, SwingConstants.RIGHT));
@@ -718,8 +725,12 @@ public class ClienteViewFrame extends ViewFrame {
         
         while (edtDlg.edit(visita)) {
             try {
-                cliente.getVisitas().add(visita);
                 clienteDao.insertRecord(visita);
+                cliente.getVisitas().add(visita);
+                
+                visitaSort();
+                visitasTable.setModel(new ClienteVisitaModel((List) cliente.getVisitas()));
+                makeVisitasTable();
                 ((ClienteVisitaModel) visitasTable.getModel()).fireTableDataChanged();
                 break;
             } catch (Exception e) {
@@ -728,6 +739,14 @@ public class ClienteViewFrame extends ViewFrame {
             }
         }
     }
+    
+    private void visitaSort() {
+        List<VisitaCliente> lista = new ArrayList();
+                lista.addAll(cliente.getVisitas());
+                Collections.sort(lista, new VisitaComparator());
+                cliente.setVisitas(lista);
+    }
+    
     private void visitaEdit() {
         VisitaCliente visita = (VisitaCliente) ((ClienteVisitaModel) visitasTable.getModel()).getObject(visitasTable.getSelectedRow());
 
@@ -2193,6 +2212,6 @@ class VisitaComparator implements Comparator {
         VisitaCliente grupo1 = (VisitaCliente) obj1;
         VisitaCliente grupo2 = (VisitaCliente) obj2;
 
-        return grupo1.getDtVisita().compareTo(grupo2.getDtVisita());
+        return grupo2.getDtVisita().compareTo(grupo1.getDtVisita());
     }
 }
