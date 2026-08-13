@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
+<!-- Created with Jaspersoft Studio version 6.19.1.final using JasperReports Library version 6.19.1-867c00bf88cd4d784d404379d6c05e1b419e8a4c  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="compradosnota" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="786" leftMargin="15" rightMargin="15" topMargin="15" bottomMargin="15" uuid="76131dc8-1b75-4ffc-beb5-f19b21a9bff6">
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
@@ -73,7 +73,7 @@
 		<groupExpression><![CDATA[$F{cliente}]]></groupExpression>
 		<groupHeader>
 			<band height="18" splitType="Stretch">
-				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<textField pattern="" isBlankWhenNull="true">
 					<reportElement key="textField1-12" mode="Transparent" x="0" y="0" width="812" height="16" forecolor="#000000" backcolor="#FFFFFF" uuid="41d6f648-63c1-442b-9495-ba42a6fba4ca"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -91,7 +91,7 @@
 		</groupHeader>
 		<groupFooter>
 			<band height="21" splitType="Stretch">
-				<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
+				<textField pattern="#,##0.00" isBlankWhenNull="true">
 					<reportElement key="textField1-17" mode="Transparent" x="696" y="1" width="36" height="15" forecolor="#000000" backcolor="#FFFFFF" uuid="01f19f95-a8f7-49f5-9236-00c770635929"/>
 					<box>
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -105,7 +105,7 @@
 					</textElement>
 					<textFieldExpression><![CDATA[$V{subtotalUndAtend}]]></textFieldExpression>
 				</textField>
-				<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
+				<textField pattern="#,##0.00" isBlankWhenNull="true">
 					<reportElement key="textField1-27" mode="Transparent" x="591" y="1" width="38" height="15" forecolor="#000000" backcolor="#FFFFFF" uuid="752af978-59ec-48f9-abec-6d2140fa0b19"/>
 					<box>
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -119,7 +119,7 @@
 					</textElement>
 					<textFieldExpression><![CDATA[$V{subtotalUnidade}]]></textFieldExpression>
 				</textField>
-				<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
+				<textField pattern="#,##0.00" isBlankWhenNull="true">
 					<reportElement key="textField1-27" mode="Transparent" x="546" y="1" width="42" height="15" forecolor="#000000" backcolor="#FFFFFF" uuid="12e4a56c-b4f9-485a-80ce-9fe002700c03"/>
 					<box>
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -133,7 +133,7 @@
 					</textElement>
 					<textFieldExpression><![CDATA[$V{subtotalQuant}]]></textFieldExpression>
 				</textField>
-				<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
+				<textField pattern="#,##0.00" isBlankWhenNull="true">
 					<reportElement key="textField1-17" mode="Transparent" x="652" y="1" width="41" height="15" forecolor="#000000" backcolor="#FFFFFF" uuid="f6ddf146-79a3-4f13-8d42-a2725897761c"/>
 					<box>
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -147,7 +147,7 @@
 					</textElement>
 					<textFieldExpression><![CDATA[$V{subtotalQuantAtend}]]></textFieldExpression>
 				</textField>
-				<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
+				<textField pattern="#,##0.00" isBlankWhenNull="true">
 					<reportElement key="textField1-17" mode="Transparent" x="776" y="1" width="36" height="15" forecolor="#000000" backcolor="#FFFFFF" uuid="efba061b-5a60-4412-ae35-746ac8e4791b"/>
 					<box>
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -161,7 +161,7 @@
 					</textElement>
 					<textFieldExpression><![CDATA[$V{subtotalUndAtend}]]></textFieldExpression>
 				</textField>
-				<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
+				<textField pattern="#,##0.00" isBlankWhenNull="true">
 					<reportElement key="textField1-17" mode="Transparent" x="733" y="1" width="41" height="15" forecolor="#000000" backcolor="#FFFFFF" uuid="a5285906-d2cd-4362-a759-c27b8e920599"/>
 					<box>
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -541,7 +541,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{repres}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+			<textField pattern="" isBlankWhenNull="true">
 				<reportElement key="textField1" mode="Transparent" x="377" y="0" width="43" height="13" forecolor="#000000" backcolor="#FFFFFF" uuid="5f360b18-b58d-44b1-b85e-a7145bca6367"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -555,7 +555,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{pedido}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy" isBlankWhenNull="true">
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
 				<reportElement key="textField1" mode="Transparent" x="422" y="0" width="43" height="13" forecolor="#000000" backcolor="#FFFFFF" uuid="5d6ec97e-9793-4ef6-9182-b97fc66135de"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -569,7 +569,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{dtPedido}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy" isBlankWhenNull="true">
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
 				<reportElement key="textField1-1" mode="Transparent" x="468" y="0" width="43" height="13" forecolor="#000000" backcolor="#FFFFFF" uuid="36243485-2b09-4f0e-80f4-207c6d9308ab"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -581,9 +581,9 @@
 					<font fontName="Arial" size="7" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
 					<paragraph lineSpacing="Single"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{dtEntrega}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{dtEntregaPedido}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+			<textField pattern="" isBlankWhenNull="true">
 				<reportElement key="textField1-2" mode="Transparent" x="631" y="0" width="9" height="13" forecolor="#000000" backcolor="#FFFFFF" uuid="d3b40d06-ca02-4ad5-aeb1-b4bdeec8263c"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -597,7 +597,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{atendimento}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+			<textField pattern="" isBlankWhenNull="true">
 				<reportElement key="textField1-3" mode="Transparent" x="641" y="0" width="9" height="13" forecolor="#000000" backcolor="#FFFFFF" uuid="d973ce25-315c-4da2-8a0f-03f165981fe5"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -611,7 +611,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{situacao}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
 				<reportElement key="textField1-9" mode="Transparent" x="696" y="0" width="36" height="13" forecolor="#000000" backcolor="#FFFFFF" uuid="69a6c40f-5270-4415-93c9-9959bacb475d"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -639,7 +639,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{descricao}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
 				<reportElement key="textField1-24" mode="Transparent" x="652" y="0" width="41" height="13" forecolor="#000000" backcolor="#FFFFFF" uuid="c7d52639-bde1-416d-b5bc-5d4bc8341cd3"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -653,7 +653,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{qtdEntrega}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
 				<reportElement key="textField1-25" mode="Transparent" x="546" y="0" width="42" height="13" forecolor="#000000" backcolor="#FFFFFF" uuid="c3bbbf5a-e0fd-4cac-b284-b547feb19346"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -667,7 +667,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{qtd}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
 				<reportElement key="textField1-28" mode="Transparent" x="591" y="0" width="38" height="13" forecolor="#000000" backcolor="#FFFFFF" uuid="7f720ff4-5962-4222-9794-348284026812"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -681,7 +681,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{qtd}.floatValue() * $F{fatorConversao}.floatValue()]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
 				<reportElement key="textField1-31" mode="Transparent" x="513" y="0" width="30" height="13" forecolor="#000000" backcolor="#FFFFFF" uuid="2f9055cb-a92f-4c66-9b00-ed3fe1e3c8cc"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -695,7 +695,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cliente}.booleanValue() ? $F{valorCliente} : $F{valor}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+			<textField pattern="" isBlankWhenNull="true">
 				<reportElement key="textField1-6" mode="Transparent" x="179" y="0" width="33" height="13" forecolor="#000000" backcolor="#FFFFFF" uuid="b90d8dcc-e3f7-4935-b9fe-d8fb72ac3b49">
 					<property name="local_mesure_unitwidth" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
@@ -712,7 +712,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{produto}.trim()]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
 				<reportElement key="textField1-9" mode="Transparent" x="776" y="0" width="36" height="13" forecolor="#000000" backcolor="#FFFFFF" uuid="34b9d9c7-1b26-4a4a-a648-33f16cd0fcb5"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -726,7 +726,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{qtdSaldo}.floatValue() * $F{fatorConversao}.floatValue()]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
 				<reportElement key="textField1-24" mode="Transparent" x="733" y="0" width="41" height="13" forecolor="#000000" backcolor="#FFFFFF" uuid="02516c5e-e9df-4648-9763-df59c1d59695"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -740,7 +740,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{qtdSaldo}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+			<textField pattern="" isBlankWhenNull="true">
 				<reportElement key="textField1" mode="Transparent" x="377" y="13" width="43" height="13" forecolor="#000000" backcolor="#FFFFFF" uuid="e001e2fb-1036-484b-88d0-de24db773aa2"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -764,7 +764,7 @@
 	</pageFooter>
 	<summary>
 		<band height="34" splitType="Stretch">
-			<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
 				<reportElement key="textField1-22" mode="Transparent" x="696" y="1" width="36" height="15" forecolor="#000000" backcolor="#FFFFFF" uuid="c521c6df-7394-4305-83c2-a7c3d581667e"/>
 				<box>
 					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -801,7 +801,7 @@
 				</box>
 				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
 				<reportElement key="textField1-26" mode="Transparent" x="591" y="1" width="38" height="15" forecolor="#000000" backcolor="#FFFFFF" uuid="2afbf526-7a1b-4666-8b10-d44db54c7ee2"/>
 				<box>
 					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -815,7 +815,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$V{totalUnidade}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
 				<reportElement key="textField1-26" mode="Transparent" x="546" y="1" width="42" height="15" forecolor="#000000" backcolor="#FFFFFF" uuid="26ae4d8e-8898-4f4f-8075-e27a797fb13c"/>
 				<box>
 					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -829,7 +829,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$V{totalQuant}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
 				<reportElement key="textField1-22" mode="Transparent" x="652" y="1" width="41" height="15" forecolor="#000000" backcolor="#FFFFFF" uuid="d8ee9496-1212-4d07-8105-bb0fce7f3851"/>
 				<box>
 					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -843,7 +843,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$V{totalQuantAtend}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
 				<reportElement key="textField1-22" mode="Transparent" x="733" y="1" width="41" height="15" forecolor="#000000" backcolor="#FFFFFF" uuid="df0bd89c-e301-4126-84a3-611e7e4d220b"/>
 				<box>
 					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -857,7 +857,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$V{totalQtdSaldo}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
 				<reportElement key="textField1-22" mode="Transparent" x="776" y="1" width="36" height="15" forecolor="#000000" backcolor="#FFFFFF" uuid="29e51a92-f700-4b6a-b42f-0504d6537c72"/>
 				<box>
 					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>

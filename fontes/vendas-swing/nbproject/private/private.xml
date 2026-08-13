@@ -4,9 +4,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/jaime/workspace/planosul/java/vendas/fontes/vendas-swing/src/vendas/dao/ClienteDao.java</file>
+            <file>file:/C:/Users/jaime/workspace/planosul/java/vendas/fontes/vendas-swing/src/vendas/swing/app/pedido/ClientesProdutoView.java</file>
             <file>file:/C:/Users/jaime/workspace/planosul/java/vendas/fontes/vendas-swing/src/vendas/dao/PedidoDao.java</file>
-            <file>file:/C:/Users/jaime/workspace/planosul/java/vendas/fontes/vendas-swing/src/vendas/swing/app/pedido/ClienteSemVendaView.java</file>
+            <file>file:/C:/Users/jaime/workspace/planosul/java/vendas/fontes/vendas-swing/src/META-INF/persistence.xml</file>
+            <file>file:/C:/Users/jaime/workspace/planosul/java/vendas/fontes/vendas-swing/src/vendas/util/Constants.java</file>
+            <file>file:/C:/Users/jaime/workspace/planosul/java/vendas/fontes/vendas-swing/src/vendas/swing/app/pedido/PedidoEditPanel.java</file>
+            <file>file:/C:/Users/jaime/workspace/planosul/java/vendas/fontes/vendas-swing/src/vendas/entity/Pedido.java</file>
             <file>file:/C:/Users/jaime/workspace/planosul/java/vendas/fontes/vendas-swing/src/vendas/Main.java</file>
         </group>
     </open-files>

@@ -1495,7 +1495,7 @@ public class PedidoDao extends BaseDao {
 
         sb.append(" select c.razao as cliente, r.razao as fornecedor, pr.descricao, p.dtpedido, p.situacao, p.atend, pr.fatorcnv,");
         sb.append(" ip.idpedido, ip.idproduto, ip.valor, ip.dtentrega, ip.valorcliente, ip.qtd, ip.qtd * pr.fatorcnv as undentregue, ipa.qtdentregue,");
-        sb.append(" p.idpedidorepres");
+        sb.append(" p.idpedidorepres, p.entrega");
         sb.append(" from tbitempedido ip");
         
         if (filter.getDtNotaIni() != null) {
@@ -1528,7 +1528,7 @@ public class PedidoDao extends BaseDao {
             sb.append(" and p.dtPedido between :dtPedido1 and :dtPedido2");
         }
         if (filter.getDtEntregaIni() != null) {
-            sb.append(" and ip.dtEntrega between :dtEntrega1 and :dtEntrega2");
+            sb.append(" and p.entrega between :dtEntrega1 and :dtEntrega2");
         }
         if ((filter.getProduto() != null) && (filter.getProduto().getIdProduto() != null)) {
             sb.append(" and ip.idProduto = :produto");
@@ -1573,6 +1573,7 @@ public class PedidoDao extends BaseDao {
                 break;
         }
         
+       
         if (filter.getOrdem() == 0) {
             sb.append(" order by c.razao, pr.descricao, ip.dtEntrega");
         } else if (filter.getOrdem() == 1) {
@@ -1641,6 +1642,7 @@ public class PedidoDao extends BaseDao {
             pc.setQtd((BigDecimal) item[12]);
             pc.setQtdEntrega((BigDecimal) item[14]);
             pc.setPedidoRepres((Integer) item[15]);
+            pc.setDtEntregaPedido((Date) item[16]);
             
             if (pc.getQtdEntrega() == null) {
                 pc.setQtdEntrega(new BigDecimal(0));
